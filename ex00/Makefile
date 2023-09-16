@@ -17,6 +17,14 @@ FLAGS = -Wall -Werror -Wextra -Wshadow -std=c++98 -g3
 
 INCLUDES = -I $(HEADERS_DIRECTORY)
 
+# ECHO
+
+ifeq "$(TERM)" "xterm-256color"
+	ECHO = echo
+else
+	ECHO = echo -e
+endif
+
 # COLORS
 RESET		=	\033[0m
 BLACK		=	\033[30m
@@ -43,13 +51,19 @@ all: ## Compiles the whole project
 	@make -s $(NAME)
 
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
+	@$(ECHO) "\n\nStarting compile, now have some $(BLUE)colorful $(RED)text $(YELLOW)slayyyy$(RESET)"
 	@$(CC) $(FLAGS) $(INCLUDES) $(OBJECTS) -o $(NAME)
+	@$(ECHO) "$(CYAN)$(NAME):$(RESET) $(GREEN)object files$(RESET) were created and have come to free us, $(YELLOW)monkeys$(RESET) united."
+	@$(ECHO) "$(CYAN)$(NAME):$(RESET) $(GREEN)$(NAME)$(RESET) was created, like $(BLUE)god$(RESET) intended"
+	@$(ECHO) "$(CYAN)$(NAME):$(RESET) now watch this video : $(RED)https://www.youtube.com/watch?v=xvFZjo5PgG0$(RESET)" 
 
 $(OBJECTS_DIRECTORY): ## Creates the objects directory
 	@mkdir -p $(OBJECTS_DIRECTORY)
+	@$(ECHO) "$(CYAN)$(NAME): $(GREEN)$(OBJECTS_DIRECTORY)$(RESET) was created $(YELLOW)WOW $(BLUE)OMG$(RESET) i'm so $(GREEN)talented$(RESET)"
 
 $(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.cpp ## Compiles each '*.cpp'
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
+	@$(ECHO) -n "$(GREEN).$(RESET)"
 
 clean: ## Cleans all the '*.o' files and deletes the objects directory
 	@rm -rf $(OBJECTS_DIRECTORY)
