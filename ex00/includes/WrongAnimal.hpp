@@ -1,20 +1,20 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONG_ANIMAL_HPP
+#define WRONG_ANIMAL_HPP
 
 #include <iostream>
 
-class Animal {
+class WrongAnimal {
 	public:
 		// Constructors
-		Animal( void );
-		Animal( const std::string& type );
-		Animal( const Animal& copy );
+		WrongAnimal( void );
+		WrongAnimal( const std::string& type );
+		WrongAnimal( const WrongAnimal& copy );
 		
 		// Destructors
-		virtual ~Animal( void );
+		virtual ~WrongAnimal( void );
 		
 		// Operators
-		Animal&	operator=( const Animal& copy );
+		WrongAnimal&	operator=( const WrongAnimal& copy );
 
 		// Functions
 		// Getters
@@ -23,7 +23,7 @@ class Animal {
 		// Setters
 		void			setType( const std::string& type );
 
-		virtual	void	makeSound( void ) const;
+		void			makeSound( void ) const;
 
 	protected:
 		std::string	_type;

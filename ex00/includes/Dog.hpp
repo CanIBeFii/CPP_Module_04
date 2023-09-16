@@ -6,11 +6,15 @@
 
 class Dog : public Animal {
 	public:
-		// Orthodox Cannonical Form
+		// Constructors
 		Dog( void );
 		Dog( const Dog& copy );
-		Dog&	operator=( const Dog& copy );
+		
+		// Destructors
 		virtual ~Dog( void );
+
+		// Operators
+		Dog&	operator=( const Dog& copy );
 
 		// Functions
 		void	makeSound( void ) const;

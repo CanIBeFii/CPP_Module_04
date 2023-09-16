@@ -1,28 +1,42 @@
 #include "Animal.hpp"
 
+// Constructors
 Animal::Animal( void ) : _type( "Animal" ) {
-	std::cout << "Animal Default Constructor called" << std::endl;
+	std::cout << "Default Constructor called of " << CYAN << "Animal" << RESET << std::endl;
 }
 
 Animal::Animal( const std::string& type ) : _type( type ) {
-	std::cout << "Animal Type Constructor called" << std::endl;
+	std::cout << "Type Constructor called of " << CYAN << "Animal" << RESET << std::endl;
 }
 
 Animal::Animal( const Animal& copy ) {
-	std::cout << "Animal Copy Constructor called" << std::endl;
+	std::cout << "Copy Constructor called of " << CYAN << "Animal" << RESET << std::endl;
 	*this = copy;
 }
 
+// Destructors
+Animal::~Animal( void ) {
+	std::cout << "Destructor called of " << CYAN << "Animal" << RESET << std::endl;
+}
+
+// Operators
 Animal&	Animal::operator=( const Animal& copy ) {
-	std::cout << "Animal Assignation Operator called" << std::endl;
+	std::cout << "Assignation Operator called of " << CYAN << "Animal" << RESET << std::endl;
 	if ( this != &copy ) {
 		_type = copy._type;
 	}
 	return ( *this );
 }
 
-Animal::~Animal( void ) {
-	std::cout << "Animal Destructor called" << std::endl;
+// Functions
+// Setters
+void	Animal::setType( const std::string& type ) {
+	_type = type;
+}
+
+// Getters
+std::string	Animal::getType( void ) const {
+	return ( _type );
 }
 
 void	Animal::makeSound( void ) const {
