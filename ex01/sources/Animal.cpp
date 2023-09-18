@@ -2,15 +2,18 @@
 
 // Constructors
 Animal::Animal( void ) : _type( "Animal" ) {
-	std::cout << "Default Constructor called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << "Default " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << "called of " << CYAN << "Animal" << RESET << std::endl;
 }
 
 Animal::Animal( const std::string& type ) : _type( type ) {
-	std::cout << "Type Constructor called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << "Type " << BOLDGREEN << "Constructor" << RESET;
+	std::cout << " called of " << CYAN << "Animal" << RESET << std::endl;
 }
 
 Animal::Animal( const Animal& copy ) {
-	std::cout << "Copy Constructor called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << "called of " << CYAN << "Animal" << RESET << std::endl;
 	*this = copy;
 }
 
