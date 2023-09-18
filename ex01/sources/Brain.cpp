@@ -7,6 +7,7 @@ Brain::Brain( void ) {
 
 Brain::Brain( const Brain& copy ) {
 	std::cout << "Copy Constructor called of " << CYAN << "Brain" << RESET << std::endl;
+	*this = copy;
 }
 
 // Destructors

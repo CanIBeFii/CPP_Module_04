@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 	public:
@@ -17,7 +18,16 @@ class Dog : public Animal {
 		Dog&	operator=( const Dog& copy );
 
 		// Functions
+		// Getters
+		Brain	*getBrain( void ) const;
+
+		// Setters
+		void	setBrain( Brain *brain );
+
 		void	makeSound( void ) const;
+
+	private:
+		Brain	*_brain;
 };
 
 #endif
