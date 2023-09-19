@@ -3,7 +3,7 @@
 // Constructors
 Cat::Cat( void ) : Animal( "Cat" ) {
 	std::cout << BOLDCYAN << "Cat: " << RESET;
-	std::cout << BOLDYEALLOW << "Default " << BOLDGREEN << " Constructor " << RESET;
+	std::cout << BOLDYELLOW << "Default " << BOLDGREEN << " Constructor " << RESET;
 	std::cout << "called" << std::endl;
 
 	_brain = new Brain();
@@ -11,7 +11,7 @@ Cat::Cat( void ) : Animal( "Cat" ) {
 
 Cat::Cat( const Cat& copy ) : Animal( copy ) {
 	std::cout << BOLDCYAN << "Cat: " << RESET;
-	std::cout << BOLDYEALLOW << "Copy " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET;
 	std::cout << "called" << std::endl;
 
 	*this = copy;
@@ -30,7 +30,7 @@ Cat::~Cat( void ) {
 // Operators
 Cat&	Cat::operator=( const Cat& copy ) {
 	std::cout << BOLDCYAN << "Cat: " << RESET;
-	std::cout << BOLDYEALLOW << "Assignation Operator" << RESET << " called" << std::endl;
+	std::cout << BOLDYELLOW << "Assignation Operator" << RESET << " called" << std::endl;
 
 	if ( this != &copy ) {
 		Animal::operator=( copy );

@@ -19,10 +19,9 @@ Brain::~Brain( void ) {
 Brain&	Brain::operator=( const Brain& copy ) {
 	std::cout << "Assignation Operator called of " << CYAN << "Brain" << RESET << std::endl;
 	
-	if ( this != &copy ) {
-		for ( int i = 0; i < 100; i++ ) {
-			setIdea( i , copy.getIdea( i ) );
-		}
+
+	for ( int i = 0; i < 100; i++ ) {
+		setIdea( i , copy.getIdea( i ) );
 	}
 	return ( *this );
 }

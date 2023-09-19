@@ -30,7 +30,7 @@ Animal::~Animal( void ) {
 // Operators
 Animal&	Animal::operator=( const Animal& copy ) {
 	std::cout << BOLDCYAN << "Animal: " << RESET;
-	tsd::cout << BOLDYELLOW << "Assignation Operator" << RESET << " called" << std::endl;
+	std::cout << BOLDYELLOW << "Assignation Operator" << RESET << " called" << std::endl;
 
 	if ( this != &copy ) {
 		_type = copy._type;

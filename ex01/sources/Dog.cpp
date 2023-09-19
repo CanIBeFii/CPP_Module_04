@@ -3,7 +3,7 @@
 // Constructors
 Dog::Dog( void ) : Animal( "Dog" ) {
 	std::cout << BOLDCYAN << "Dog: " << RESET;
-	std::cout << BOLDYEALLOW << "Default " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << BOLDYELLOW << "Default " << BOLDGREEN << "Constructor " << RESET;
 	std::cout << "called" << std::endl;
 
 	_brain = new Brain();
@@ -11,7 +11,7 @@ Dog::Dog( void ) : Animal( "Dog" ) {
 
 Dog::Dog( const Dog& copy ) : Animal( copy ) {
 	std::cout << BOLDCYAN << "Dog: " << RESET;
-	std::cout << BOLDYEALLOW << "Copy " << BOLDGREEN << "Constructor " << RESET; 
+	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET; 
 	std::cout << "called" << std::endl;
 
 	*this = copy;
@@ -30,7 +30,7 @@ Dog::~Dog( void ) {
 // Operators
 Dog&	Dog::operator=( const Dog& copy ) {
 	std::cout << BOLDCYAN << "Dog: " << RESET;
-	std::cout << BOLDYEALLOW << "Assignation Operator" << RESET << " called" << std::endl;
+	std::cout << BOLDYELLOW << "Assignation Operator" << RESET << " called" << std::endl;
 
 	if ( this != &copy ) {
 		Animal::operator=( copy );
@@ -50,6 +50,9 @@ Dog&	Dog::operator=( const Dog& copy ) {
 // Functions
 // Getters
 Brain	*Dog::getBrain( void ) const {
+	if ( _brain == NULL ) {
+		return ( NULL );
+	}
 	return ( _brain );
 }
 
