@@ -2,29 +2,36 @@
 
 // Constructors
 Animal::Animal( void ) : _type( "Animal" ) {
-	std::cout << "Default " << BOLDGREEN << "Constructor " << RESET;
-	std::cout << "called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Animal: " << RESET;
+	std::cout << BOLDYELLOW << "Default " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << "called" << std::endl;
 }
 
 Animal::Animal( const std::string& type ) : _type( type ) {
-	std::cout << "Type " << BOLDGREEN << "Constructor" << RESET;
-	std::cout << " called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Animal: " << RESET;
+	std::cout << BOLDYELLOW << "Type " << BOLDGREEN << "Constructor" << RESET; 
+	std::cout << " called" << std::endl;
 }
 
 Animal::Animal( const Animal& copy ) {
+	std::cout << BOLDCYAN << "Animal: " << RESET;
 	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET;
-	std::cout << "called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << "called" << std::endl;
+
 	*this = copy;
 }
 
 // Destructors
 Animal::~Animal( void ) {
-	std::cout << "Destructor called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Animal: " << RESET;
+	std::cout << BOLDRED << " Destructor " << RESET << "called" << std::endl;
 }
 
 // Operators
 Animal&	Animal::operator=( const Animal& copy ) {
-	std::cout << "Assignation Operator called of " << CYAN << "Animal" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Animal: " << RESET;
+	tsd::cout << BOLDYELLOW << "Assignation Operator" << RESET << " called" << std::endl;
+
 	if ( this != &copy ) {
 		_type = copy._type;
 	}

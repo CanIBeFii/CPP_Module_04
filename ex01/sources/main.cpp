@@ -19,6 +19,13 @@ int	main( void )
 		delete meta;
 		delete j;
 		delete i;
+
+		std::cout << std::endl;
+		Dog dog;
+		{
+			Dog tmp = dog;
+		}
+		std::cout << std::endl;
 	}
 	{
 		const WrongAnimal* meta = new WrongAnimal();

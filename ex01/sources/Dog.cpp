@@ -2,23 +2,36 @@
 
 // Constructors
 Dog::Dog( void ) : Animal( "Dog" ) {
-	std::cout << "Default Constructor called of " << CYAN << "Dog" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Dog: " << RESET;
+	std::cout << BOLDYEALLOW << "Default " << BOLDGREEN << "Constructor " << RESET;
+	std::cout << "called" << std::endl;
+
 	_brain = new Brain();
 }
 
 Dog::Dog( const Dog& copy ) : Animal( copy ) {
-	std::cout << "Copy Constructor called of " << CYAN << "Dog" << RESET << std::endl;
+	std::cout << BOLDCYAN << "Dog: " << RESET;
+	std::cout << BOLDYEALLOW << "Copy " << BOLDGREEN << "Constructor " << RESET; 
+	std::cout << "called" << std::endl;
+
 	*this = copy;
 }
 
 // Destructor
 Dog::~Dog( void ) {
-	std::cout << "Destructor called of " << CYAN << "Dog" << RESET << std::endl;
-	delete _brain;
+	std::cout << BOLDCYAN << "Dog: " << RESET;
+	std::cout << BOLDRED << "Destructor " << RESET << "called" << std::endl; 
+	
+	if ( _brain != NULL ) {
+		delete _brain;
+	}
 }
 
 // Operators
 Dog&	Dog::operator=( const Dog& copy ) {
+	std::cout << BOLDCYAN << "Dog: " << RESET;
+	std::cout << BOLDYEALLOW << "Assignation Operator" << RESET << " called" << std::endl;
+
 	if ( this != &copy ) {
 		Animal::operator=( copy );
 		if ( getBrain() != NULL ) {
