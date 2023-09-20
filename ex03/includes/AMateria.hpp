@@ -1,33 +1,36 @@
-#ifndef AANIMAL_HPP
-#define AANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
 
-class AAnimal {
+class AMateria {
 	public:
 		// Constructors
-		AAnimal( void );
-		AAnimal( const std::string& type );
-		AAnimal( const AAnimal& copy );
-		
+		AMateria( void );
+		AMateria( const std::string& type );
+
 		// Destructors
-		virtual ~AAnimal( void );
-		
+		virtual ~AMateria( void );
+
 		// Operators
-		AAnimal&	operator=( const AAnimal& copy );
+		AMateria&	operator=( const AMateria& copy );
 
 		// Functions
 		// Getters
-		std::string		getType( void ) const;
+		const std::string&	getType( void ) const;
 
 		// Setters
-		void			setType( const std::string& type );
+		void				setType( std::string& type );
 
-		virtual	void	makeSound( void ) const = 0;
 
+		virtual AMateria*	clone( void ) const = 0;
+		virtual void		use( ICharacter& target );
+	
 	protected:
 		std::string	_type;
 };
+
 
 // Colors
 #define RESET   "\033[0m"
@@ -47,5 +50,6 @@ class AAnimal {
 #define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
 #define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 #define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
 
 #endif
