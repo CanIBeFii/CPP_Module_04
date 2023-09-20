@@ -50,6 +50,9 @@ Cat&	Cat::operator=( const Cat& copy ) {
 // Functions
 // Getters
 Brain	*Cat::getBrain( void ) const {
+	if ( _brain == NULL ) {
+		return ( NULL );
+	}
 	return ( _brain );
 }
 
