@@ -50,5 +50,5 @@ const std::string&	AMateria::getType( void ) const {
 
 // Functions
 void	AMateria::use( ICharacter& target ) {
-	std::cout << "* random stuff happen *" << std::endl;
+	std::cout << "* random stuff happen to " << target.getName() << " *" << std::endl;
 }

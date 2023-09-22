@@ -4,11 +4,14 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria {
 	public:
 		// Constructors
 		AMateria( void );
 		AMateria( const std::string& type );
+		AMateria( const AMateria& copy );
 
 		// Destructors
 		virtual ~AMateria( void );

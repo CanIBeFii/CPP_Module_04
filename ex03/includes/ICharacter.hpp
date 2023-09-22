@@ -4,10 +4,12 @@
 #include <iostream>
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter {
 	public:
 		// Destructors
-		virtual ~ICharacter( void );
+		virtual ~ICharacter( void ) {};
 
 		//	Getters
 		virtual const std::string&	getName( void ) const = 0;

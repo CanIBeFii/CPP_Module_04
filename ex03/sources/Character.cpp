@@ -73,10 +73,29 @@ void	Character::setName( const std::string& name ) {
 void	Character::equip( AMateria* m ) {
 	for ( int i = 0; i < 4; i++ ) {
 		if ( _inventory[i] == NULL ) {
+			std::cout << m->getType() << " being equiped on slot " << i << std::endl;
 			_inventory[i] = m;
 			return ;
 		}
 	}
-	
 	std::cout << "Inventory is full" << std::endl;
+}
+
+void	Character::unequip( int idx ) {
+	if ( _inventory[idx] == NULL ) {
+		std::cout << "No Materia on this slot" << std::endl;
+		return ;
+	}
+	std::cout << getName() << " is droping the Materia ";
+	std::cout << _inventory[idx]->getType() << " on the floor!" << std::endl; 
+
+	_inventory[idx] = NULL;
+}
+
+void	Character::use( int idx, ICharacter& target ) {
+	if ( _inventory[idx] == NULL ) {
+		std::cout << "Slot is empty can't use Materia" << std::endl;
+		return ;
+	}
+	_inventory[idx]->use( target );
 }
