@@ -14,6 +14,7 @@ Cat::Cat( const Cat& copy ) : Animal( copy ) {
 	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET;
 	std::cout << "called" << std::endl;
 
+	_brain = NULL;
 	*this = copy;
 }
 
