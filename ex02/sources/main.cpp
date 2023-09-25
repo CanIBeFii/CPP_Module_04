@@ -43,28 +43,28 @@ int	main( void )
     {
         Dog tmp = basic;
     }
-	{
-		const AAnimal* meta = new AAnimal();
-		const AAnimal* j = new Dog();
-		const AAnimal* i = new Cat();
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		j->makeSound();
-		i->makeSound();
-		meta->makeSound();
+	// {
+	// 	const AAnimal* meta = new AAnimal();
+	// 	const AAnimal* j = new Dog();
+	// 	const AAnimal* i = new Cat();
+	// 	std::cout << j->getType() << " " << std::endl;
+	// 	std::cout << i->getType() << " " << std::endl;
+	// 	j->makeSound();
+	// 	i->makeSound();
+	// 	meta->makeSound();
 
-		delete meta;
-		delete i;
-		delete j;
+	// 	delete meta;
+	// 	delete i;
+	// 	delete j;
 
-		Cat a;
-		Cat b;
-		a = b;
-		std::cout << a.getType() << std::endl;
+	// 	Cat a;
+	// 	Cat b;
+	// 	a = b;
+	// 	std::cout << a.getType() << std::endl;
 			
-		std::cout << std::endl;
-		std::cout << std::endl;
-	}
+	// 	std::cout << std::endl;
+	// 	std::cout << std::endl;
+	// }
 	// {
 	// 	const AAnimal	*j = new Dog();
 	// 	const AAnimal	*i = new Cat();

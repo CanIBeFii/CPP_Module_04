@@ -14,6 +14,7 @@ Dog::Dog( const Dog& copy ) : AAnimal( copy ) {
 	std::cout << BOLDYELLOW << "Copy " << BOLDGREEN << "Constructor " << RESET; 
 	std::cout << "called" << std::endl;
 
+	_brain = NULL;
 	*this = copy;
 }
 
